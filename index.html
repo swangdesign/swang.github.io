@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastian Wang | Portfolio</title>
+    <title>Sebastian Wang | Project Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">SW.</a>
+            <a href="#" class="logo">
+                <span class="logo-s">S</span>wang<span class="logo-dot">.</span>
+            </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">About Me</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,127 +30,272 @@
         <section id="about" class="about-section">
             <div class="container about-container">
                 <div class="about-text">
+                    <h2 class="pre-title">Project Portfolio</h2>
                     <h1>Sebastian Wang</h1>
                     <p class="subtitle">M.Sc. Student in Product Development</p>
                     <p class="bio">
-                        As a fourth-year student at Chalmers University of Technology, I am pursuing an M.Sc. in Product Development after completing a B.Sc. in Automation and Mechatronics. I enjoy combining creativity and technology to develop innovative, user-friendly solutions. My technical foundation spans project management, process optimization, rapid prototyping, CAD, and Python.
+                        Welcome to my portfolio. As a fourth-year student at Chalmers University of Technology, I am pursuing an M.Sc. in Product Development after completing a B.Sc. in Automation and Mechatronics. I enjoy combining creativity and technology to develop innovative, user-friendly solutions. Here you will find a showcase of my design processes, physical prototypes, and practical engineering skills.
                     </p>
                     <div class="about-actions">
                         <a href="assets/docs/CV_Sebastian_Wang.pdf" target="_blank" class="btn btn-primary">View My CV</a>
-                        <a href="#projects" class="btn btn-secondary">See Projects</a>
+                        <a href="#projects" class="btn btn-secondary">Explore Projects</a>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="assets/img/portrait.jpg" alt="Sebastian Wang Portrait">
+                    <div class="portrait-wrapper">
+                        <img src="assets/img/portrait.jpg" alt="Sebastian Wang Portrait">
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="projects-section">
             <div class="container">
-                <h2 class="section-title">Selected Projects</h2>
+                <h2 class="section-title">Project Portfolio Showcase</h2>
                 
-                <div class="project-grid">
+                <div class="project-list">
                     <!-- Project 1: PExA -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <img src="assets/img/projects/pexa_front.png" alt="PExA Device Redesign">
-                            <video src="assets/video/pexa_demo.mp4" autoplay loop muted playsinline class="project-video-hover"></video>
-                        </div>
-                        <div class="project-content">
+                    <article class="project-single">
+                        <div class="project-info">
                             <h3>Redesign of PExA Instrument</h3>
-                            <p>Helped design a medical instrument for identifying respiratory diseases. The project focused on improving ergonomics, usability, and clinical aesthetics. We built a functional physical prototype using CAD, 3D printing, and Arduino to evaluate and verify different design concepts.</p>
-                            <span class="project-tag">Product Development</span>
-                            <span class="project-tag">Medical Tech</span>
+                            <div class="project-tags">
+                                <span class="project-tag">Product Development</span>
+                                <span class="project-tag">Medical Tech</span>
+                            </div>
+                            <p>Helped design a medical instrument for identifying respiratory diseases. The project focused on improving ergonomics, usability, and clinical aesthetics. We built a functional physical prototype using CAD, 3D printing, and Arduino to evaluate and verify different design concepts. This involved optimizing the internal volume and creating intuitive user guidance.</p>
+                        </div>
+                        <div class="project-gallery">
+                            
+    <div class="carousel" id="carousel-pexa">
+        <div class="carousel-track">
+            
+        <div class="carousel-slide active">
+            <img src="assets/img/projects/pexa/1786974082184.jpeg" alt="Project Image 1">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/pexa/Door Hinges.png" alt="Project Image 2">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/pexa/IMG_6527.PNG" alt="Project Image 3">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/pexa/IMG_6529.PNG" alt="Project Image 4">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/pexa/IMG_6532.PNG" alt="Project Image 5">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/pexa/IMG_6534.PNG" alt="Project Image 6">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/pexa/IMG_6541.PNG" alt="Project Image 7">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/pexa/IMG_6543.PNG" alt="Project Image 8">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/pexa/front.png" alt="Project Image 9">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/pexa/pexa_render.png" alt="Project Image 10">
+        </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-prev" onclick="prevSlide('carousel-pexa')">&#10094;</button>
+            <div class="carousel-indicators">
+                <button class="carousel-indicator active" onclick="goToSlide('carousel-pexa', 0)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-pexa', 1)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-pexa', 2)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-pexa', 3)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-pexa', 4)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-pexa', 5)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-pexa', 6)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-pexa', 7)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-pexa', 8)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-pexa', 9)"></button>
+            </div>
+            <button class="carousel-next" onclick="nextSlide('carousel-pexa')">&#10095;</button>
+        </div>
+    </div>
+    
                         </div>
                     </article>
 
                     <!-- Project 2: Bachelor Thesis -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <img src="assets/img/projects/exo_front.jpeg" alt="Sensorized Exoskeleton">
-                        </div>
-                        <div class="project-content">
+                    <article class="project-single reverse">
+                        <div class="project-info">
                             <h3>B.Sc. Thesis: Sensorized Exoskeleton</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Robotics</span>
+                                <span class="project-tag">Unity</span>
+                            </div>
                             <p>Developed a lightweight, 3D printed sensorized exoskeleton aimed at gamifying the rehabilitation process for knee injuries. The system collects real time movement data using sensors. This data is processed to control a game application in Unity, motivating patients and ensuring they follow their exercises.</p>
-                            <span class="project-tag">Robotics</span>
-                            <span class="project-tag">Unity & ROS</span>
                             <div class="project-links">
                                 <a href="https://odr.chalmers.se/items/acac1b5c-df1e-4fc1-8c84-fc7fff4e6511" target="_blank" class="link-external">View Thesis on Chalmers ODR ↗</a>
                             </div>
                         </div>
+                        <div class="project-gallery">
+                            
+    <div class="carousel" id="carousel-exo">
+        <div class="carousel-track">
+            
+        <div class="carousel-slide active">
+            <img src="assets/img/projects/exo/1751350289018.jpeg" alt="Project Image 1">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/exo/frontpage1.jpeg" alt="Project Image 2">
+        </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-prev" onclick="prevSlide('carousel-exo')">&#10094;</button>
+            <div class="carousel-indicators">
+                <button class="carousel-indicator active" onclick="goToSlide('carousel-exo', 0)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-exo', 1)"></button>
+            </div>
+            <button class="carousel-next" onclick="nextSlide('carousel-exo')">&#10095;</button>
+        </div>
+    </div>
+    
+                        </div>
                     </article>
 
                     <!-- Project 3: Modular Coffee Machine -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <img src="assets/img/projects/coffee.jpg" alt="Modular Coffee Machine">
-                        </div>
-                        <div class="project-content">
+                    <article class="project-single">
+                        <div class="project-info">
                             <h3>Modular Coffee Machine</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Machine Design</span>
+                                <span class="project-tag">LCA & FMEA</span>
+                            </div>
                             <p>Designed a sustainable and modular concept for a coffee machine, developing two different products from a shared architecture. The project utilized Failure Mode and Effects Analysis and Life Cycle Assessment to optimize production costs, manufacturability, and environmental impact.</p>
-                            <span class="project-tag">Machine Design</span>
-                            <span class="project-tag">LCA & FMEA</span>
+                        </div>
+                        <div class="project-gallery">
+                            
+    <div class="carousel" id="carousel-coffee">
+        <div class="carousel-track">
+            
+        <div class="carousel-slide active">
+            <img src="assets/img/projects/coffee/Screenshot 2026-09-19 at 14.56.35.jpg" alt="Project Image 1">
+        </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-prev" onclick="prevSlide('carousel-coffee')">&#10094;</button>
+            <div class="carousel-indicators">
+                <button class="carousel-indicator active" onclick="goToSlide('carousel-coffee', 0)"></button>
+            </div>
+            <button class="carousel-next" onclick="nextSlide('carousel-coffee')">&#10095;</button>
+        </div>
+    </div>
+    
                         </div>
                     </article>
 
                     <!-- Project 4: Additive Manufacturing -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <img src="assets/img/projects/steering2.jpg" alt="Steering Knuckle Additive Manufacturing">
-                        </div>
-                        <div class="project-content">
+                    <article class="project-single reverse">
+                        <div class="project-info">
                             <h3>Additive Manufacturing: Steering Knuckle</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Additive Manufacturing</span>
+                                <span class="project-tag">Topology Optimization</span>
+                            </div>
                             <p>Designed a lightweight and robust steering knuckle for a miniature terrain buggy using additive manufacturing and steel. Through topology optimization and structural simulation, the final part achieved significant weight reduction while maintaining necessary stiffness and strength for off road performance.</p>
-                            <span class="project-tag">Additive Manufacturing</span>
-                            <span class="project-tag">Topology Optimization</span>
+                        </div>
+                        <div class="project-gallery">
+                            
+    <div class="carousel" id="carousel-additive">
+        <div class="carousel-track">
+            
+        <div class="carousel-slide active">
+            <img src="assets/img/projects/additive/08071d5fe25d74cfc97b2cde65e8cea4.JPEG" alt="Project Image 1">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/additive/0de62ed690dd883320fd8e66329374f7.jpg" alt="Project Image 2">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/additive/0f0a7106073ee22d86231fa703e30355.JPEG" alt="Project Image 3">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/additive/0f965ed8aa70e595b87a86d63b90d341.JPEG" alt="Project Image 4">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/additive/1c0b6cf795eac9cb0e0d032f3e3b4c1f.JPEG" alt="Project Image 5">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/additive/1d22bf84fce5f04a01884b9ac0763beb.JPEG" alt="Project Image 6">
+        </div>
+        <div class="carousel-slide ">
+            <img src="assets/img/projects/additive/affab4443823658937bc4ea2e650e2e2.jpg" alt="Project Image 7">
+        </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-prev" onclick="prevSlide('carousel-additive')">&#10094;</button>
+            <div class="carousel-indicators">
+                <button class="carousel-indicator active" onclick="goToSlide('carousel-additive', 0)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-additive', 1)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-additive', 2)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-additive', 3)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-additive', 4)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-additive', 5)"></button><button class="carousel-indicator " onclick="goToSlide('carousel-additive', 6)"></button>
+            </div>
+            <button class="carousel-next" onclick="nextSlide('carousel-additive')">&#10095;</button>
+        </div>
+    </div>
+    
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="certificates" class="certificates-section">
+        <section id="education" class="education-section">
             <div class="container">
-                <h2 class="section-title">Certificates & Core Coursework</h2>
-                <div class="certificates-content">
-                    <div class="cert-info">
-                        <h3>Chalmers University of Technology</h3>
-                        <p>Currently enrolled in the M.Sc. Product Development program (120.0 hp) after graduating from the B.Sc. Automation and Mechatronics Engineering program (300.0 hp).</p>
-                        <a href="assets/docs/Chalmers_certificate.pdf" target="_blank" class="btn btn-secondary mt-2">View Official Certificate</a>
+                <h2 class="section-title">Undergraduate and Postgraduate</h2>
+                
+                <div class="education-timeline">
+                    <!-- MSc -->
+                    <div class="degree-block">
+                        <div class="degree-header">
+                            <div class="degree-title">
+                                <h3>M.Sc. Product Development</h3>
+                                <span class="degree-university">Chalmers University of Technology</span>
+                            </div>
+                            <div class="degree-date">2025 – Present</div>
+                        </div>
+                        <div class="coursework">
+                            <h4>Coursework</h4>
+                            <ul class="course-list">
+                                <li class="core-course">Additive Manufacturing</li>
+                                <li class="core-course">Platform Development & Modularization Management</li>
+                                <li class="core-course">Product Planning - Needs and Opportunities</li>
+                                <li class="core-course">Product Development Project</li>
+                                <li>Project Management</li>
+                                <li>Product Development Management</li>
+                                <li>Advanced Computer Aided Design</li>
+                            </ul>
+                        </div>
                     </div>
-                    
-                    <div class="courses-grid">
-                        <div class="course-card">
-                            <div class="course-header">
-                                <span class="course-code">MTT120</span>
-                                <h4>Additive Manufacturing</h4>
-                            </div>
-                            <p>Covers the principles and technologies of additive manufacturing, providing knowledge about the manufacturing chain, including design, materials, and real-world applications.</p>
-                        </div>
-                        
-                        <div class="course-card">
-                            <div class="course-header">
-                                <span class="course-code">TEK021</span>
-                                <h4>Platform Development & Modularization</h4>
-                            </div>
-                            <p>Explores strategies for platform development, modular design, and managing product architectures to improve production efficiency, customizability, and sustainability.</p>
-                        </div>
 
-                        <div class="course-card">
-                            <div class="course-header">
-                                <span class="course-code">PPU085</span>
-                                <h4>Product Planning</h4>
+                    <!-- BSc -->
+                    <div class="degree-block">
+                        <div class="degree-header">
+                            <div class="degree-title">
+                                <h3>B.Sc. Automation and Mechatronics Engineering</h3>
+                                <span class="degree-university">Chalmers University of Technology</span>
                             </div>
-                            <p>Focuses on identifying customer needs and market opportunities to drive the early phases of product development and innovation.</p>
+                            <div class="degree-date">2022 – 2025</div>
                         </div>
-
-                        <div class="course-card">
-                            <div class="course-header">
-                                <span class="course-code">MPP126</span>
-                                <h4>Product Development Project</h4>
-                            </div>
-                            <p>A comprehensive project course involving the full cycle of product development, from conceptualization to physical prototyping, applying theoretical knowledge in a practical setting.</p>
+                        <div class="coursework">
+                            <h4>Coursework</h4>
+                            <ul class="course-list">
+                                <li class="core-course">Bachelor's Thesis in Electrical Engineering</li>
+                                <li class="core-course">Machine Design</li>
+                                <li class="core-course">Systems Engineering</li>
+                                <li class="core-course">Intelligent Automation</li>
+                                <li>Image Analysis</li>
+                                <li>Introduction to Machine Learning</li>
+                                <li>Automatic Control</li>
+                                <li>Signals and Systems</li>
+                                <li>Electric Drives and Fields</li>
+                                <li>Data Structures and Algorithms</li>
+                                <li>Engineering Measurements</li>
+                                <li>Mechanics 1 & 2</li>
+                                <li>Mathematical Statistics</li>
+                                <li>Calculus in Several Variables</li>
+                                <li>Machine Oriented Programming</li>
+                                <li>Technology and Society</li>
+                                <li>Discrete Mathematics</li>
+                                <li>Economy and Organisation</li>
+                                <li>Introduction to Computer Engineering</li>
+                                <li>Linear Algebra</li>
+                                <li>Calculus in One Variable</li>
+                                <li>Electric Circuits</li>
+                                <li>Introductory Course in Programming</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -155,7 +303,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="contact">
         <div class="container footer-container">
             <div class="footer-left">
                 <h2>Let's connect.</h2>

@@ -20,7 +20,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Reveal animations on scroll
-const revealElements = document.querySelectorAll('.project-card, .course-card');
+const revealElements = document.querySelectorAll('.project-single, .degree-block');
 
 const revealOnScroll = () => {
     const windowHeight = window.innerHeight;
@@ -45,3 +45,54 @@ revealElements.forEach(element => {
 window.addEventListener('scroll', revealOnScroll);
 // Trigger once on load
 revealOnScroll();
+
+// Carousel logic
+window.goToSlide = function(carouselId, index) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const indicators = carousel.querySelectorAll('.carousel-indicator');
+    
+    // Update active states
+    slides.forEach((slide, i) => {
+        if (i === index) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+    
+    indicators.forEach((indicator, i) => {
+        if (i === index) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+    
+    // Store current index
+    carousel.dataset.currentIndex = index;
+};
+
+window.nextSlide = function(carouselId) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    let currentIndex = parseInt(carousel.dataset.currentIndex || 0);
+    
+    currentIndex = (currentIndex + 1) % slides.length;
+    goToSlide(carouselId, currentIndex);
+};
+
+window.prevSlide = function(carouselId) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    let currentIndex = parseInt(carousel.dataset.currentIndex || 0);
+    
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    goToSlide(carouselId, currentIndex);
+};
