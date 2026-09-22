@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastian Wang | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">SW.</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <div class="container about-container">
+                <div class="about-text">
+                    <h1>Sebastian Wang</h1>
+                    <p class="subtitle">M.Sc. Student in Product Development</p>
+                    <p class="bio">
+                        As a fourth-year student at Chalmers University of Technology, I am pursuing an M.Sc. in Product Development after completing a B.Sc. in Automation and Mechatronics. I enjoy combining creativity and technology to develop innovative, user-friendly solutions. My technical foundation spans project management, process optimization, rapid prototyping, CAD, and Python.
+                    </p>
+                    <div class="about-actions">
+                        <a href="assets/docs/CV_Sebastian_Wang.pdf" target="_blank" class="btn btn-primary">View My CV</a>
+                        <a href="#projects" class="btn btn-secondary">See Projects</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="assets/img/portrait.jpg" alt="Sebastian Wang Portrait">
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Selected Projects</h2>
+                
+                <div class="project-grid">
+                    <!-- Project 1: PExA -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="assets/img/projects/pexa_front.png" alt="PExA Device Redesign">
+                            <video src="assets/video/pexa_demo.mp4" autoplay loop muted playsinline class="project-video-hover"></video>
+                        </div>
+                        <div class="project-content">
+                            <h3>Redesign of PExA Instrument</h3>
+                            <p>Helped design a medical instrument for identifying respiratory diseases. The project focused on improving ergonomics, usability, and clinical aesthetics. We built a functional physical prototype using CAD, 3D printing, and Arduino to evaluate and verify different design concepts.</p>
+                            <span class="project-tag">Product Development</span>
+                            <span class="project-tag">Medical Tech</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Bachelor Thesis -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="assets/img/projects/exo_front.jpeg" alt="Sensorized Exoskeleton">
+                        </div>
+                        <div class="project-content">
+                            <h3>B.Sc. Thesis: Sensorized Exoskeleton</h3>
+                            <p>Developed a lightweight, 3D printed sensorized exoskeleton aimed at gamifying the rehabilitation process for knee injuries. The system collects real time movement data using sensors. This data is processed to control a game application in Unity, motivating patients and ensuring they follow their exercises.</p>
+                            <span class="project-tag">Robotics</span>
+                            <span class="project-tag">Unity & ROS</span>
+                            <div class="project-links">
+                                <a href="https://odr.chalmers.se/items/acac1b5c-df1e-4fc1-8c84-fc7fff4e6511" target="_blank" class="link-external">View Thesis on Chalmers ODR ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Modular Coffee Machine -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="assets/img/projects/coffee.jpg" alt="Modular Coffee Machine">
+                        </div>
+                        <div class="project-content">
+                            <h3>Modular Coffee Machine</h3>
+                            <p>Designed a sustainable and modular concept for a coffee machine, developing two different products from a shared architecture. The project utilized Failure Mode and Effects Analysis and Life Cycle Assessment to optimize production costs, manufacturability, and environmental impact.</p>
+                            <span class="project-tag">Machine Design</span>
+                            <span class="project-tag">LCA & FMEA</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Additive Manufacturing -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <img src="assets/img/projects/steering2.jpg" alt="Steering Knuckle Additive Manufacturing">
+                        </div>
+                        <div class="project-content">
+                            <h3>Additive Manufacturing: Steering Knuckle</h3>
+                            <p>Designed a lightweight and robust steering knuckle for a miniature terrain buggy using additive manufacturing and steel. Through topology optimization and structural simulation, the final part achieved significant weight reduction while maintaining necessary stiffness and strength for off road performance.</p>
+                            <span class="project-tag">Additive Manufacturing</span>
+                            <span class="project-tag">Topology Optimization</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="certificates-section">
+            <div class="container">
+                <h2 class="section-title">Certificates & Core Coursework</h2>
+                <div class="certificates-content">
+                    <div class="cert-info">
+                        <h3>Chalmers University of Technology</h3>
+                        <p>Currently enrolled in the M.Sc. Product Development program (120.0 hp) after graduating from the B.Sc. Automation and Mechatronics Engineering program (300.0 hp).</p>
+                        <a href="assets/docs/Chalmers_certificate.pdf" target="_blank" class="btn btn-secondary mt-2">View Official Certificate</a>
+                    </div>
+                    
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-header">
+                                <span class="course-code">MTT120</span>
+                                <h4>Additive Manufacturing</h4>
+                            </div>
+                            <p>Covers the principles and technologies of additive manufacturing, providing knowledge about the manufacturing chain, including design, materials, and real-world applications.</p>
+                        </div>
+                        
+                        <div class="course-card">
+                            <div class="course-header">
+                                <span class="course-code">TEK021</span>
+                                <h4>Platform Development & Modularization</h4>
+                            </div>
+                            <p>Explores strategies for platform development, modular design, and managing product architectures to improve production efficiency, customizability, and sustainability.</p>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <span class="course-code">PPU085</span>
+                                <h4>Product Planning</h4>
+                            </div>
+                            <p>Focuses on identifying customer needs and market opportunities to drive the early phases of product development and innovation.</p>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <span class="course-code">MPP126</span>
+                                <h4>Product Development Project</h4>
+                            </div>
+                            <p>A comprehensive project course involving the full cycle of product development, from conceptualization to physical prototyping, applying theoretical knowledge in a practical setting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-left">
+                <h2>Let's connect.</h2>
+                <p>Feel free to reach out for collaborations or just a friendly hello.</p>
+            </div>
+            <div class="footer-right">
+                <ul class="contact-info">
+                    <li><a href="mailto:wang.sebastian.02@gmail.com">wang.sebastian.02@gmail.com</a></li>
+                    <li><a href="tel:+460727333676">0727333676</a></li>
+                    <li>Linnégatan 74, 413 08 Gothenburg</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
