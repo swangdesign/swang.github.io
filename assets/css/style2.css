@@ -804,3 +804,120 @@ footer {
 .cta-link:hover .arrow {
     transform: translateX(6px);
 }
+
+/* Dynamic Carousel Sizing */
+.carousel-track {
+    transition: aspect-ratio 0.4s ease-in-out;
+    width: 100%;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide img,
+.carousel-slide video {
+    width: 100%;
+    height: 100%;
+}
+
+/* Action Cards styling */
+.action-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.action-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.5rem !important;
+}
+
+.action-card .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: opacity 0.3s ease;
+}
+
+.action-card:hover .contact-link {
+    opacity: 0.6;
+}
+
+/* Force Carousel Aspect Ratio */
+.carousel {
+    transition: aspect-ratio 0.4s ease-in-out;
+    width: 100%;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+}
+
+/* Action Cards pop styling */
+.action-card {
+    background: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    background: #ffffff !important;
+}
+
+.action-card .contact-subtitle {
+    color: #666 !important;
+}
+
+.action-card .contact-link {
+    color: var(--text-primary) !important;
+}
+
+/* Fix image cropping globally */
+.carousel-slide img,
+.carousel-slide video {
+    object-fit: contain !important;
+    background-color: var(--card-bg) !important;
+    width: 100%;
+    height: 100%;
+}
+
+/* Fix email wrap */
+#email-text {
+    word-break: keep-all;
+    white-space: nowrap;
+    font-size: clamp(0.7rem, 2vw, 1.1rem) !important;
+}
+
+/* Ensure action cards pop */
+.action-card {
+    background: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.action-card .contact-subtitle {
+    color: #666 !important;
+}
+
+.action-card .contact-link {
+    color: var(--text-primary) !important;
+}

@@ -46,7 +46,37 @@ window.addEventListener('scroll', revealOnScroll);
 // Trigger once on load
 revealOnScroll();
 
-// Carousel logic
+// Carousel logic - Dynamic Aspect Ratios based on actual media size
+function updateCarouselRatio(carousel, activeSlide) {
+    const media = activeSlide.querySelector('img') || activeSlide.querySelector('video');
+    if (!media) return;
+
+    const setRatio = () => {
+        let width = media.naturalWidth || media.videoWidth;
+        let height = media.naturalHeight || media.videoHeight;
+        
+        if (width && height) {
+            carousel.style.aspectRatio = `${width} / ${height}`;
+        } else {
+            carousel.style.aspectRatio = '4/3'; // fallback
+        }
+    };
+
+    if (media.tagName === 'IMG') {
+        if (media.complete) {
+            setRatio();
+        } else {
+            media.onload = setRatio;
+        }
+    } else {
+        if (media.readyState >= 1) {
+            setRatio();
+        } else {
+            media.onloadedmetadata = setRatio;
+        }
+    }
+}
+
 window.goToSlide = function(carouselId, index) {
     const carousel = document.getElementById(carouselId);
     if (!carousel) return;
@@ -58,6 +88,7 @@ window.goToSlide = function(carouselId, index) {
     slides.forEach((slide, i) => {
         if (i === index) {
             slide.classList.add('active');
+            updateCarouselRatio(carousel, slide);
         } else {
             slide.classList.remove('active');
         }
@@ -71,7 +102,6 @@ window.goToSlide = function(carouselId, index) {
         }
     });
     
-    // Store current index
     carousel.dataset.currentIndex = index;
 };
 
@@ -96,3 +126,13 @@ window.prevSlide = function(carouselId) {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     goToSlide(carouselId, currentIndex);
 };
+
+// Initialize carousels on load
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.carousel').forEach(carousel => {
+        const firstSlide = carousel.querySelector('.carousel-slide.active');
+        if (firstSlide) {
+            updateCarouselRatio(carousel, firstSlide);
+        }
+    });
+});
