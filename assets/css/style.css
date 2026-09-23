@@ -610,3 +610,112 @@ footer {
     color: #ccc;
     margin-top: 2rem;
 }
+
+/* Fix Project Media Cropping */
+.carousel-slide img,
+.carousel-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #f0f0f0;
+}
+
+/* Contact Subtitles */
+.contact-block {
+    margin-bottom: 2rem;
+    text-align: right;
+}
+
+.contact-subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info .contact-link,
+.contact-block .contact-link {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--bg-color);
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.contact-block .contact-link:hover {
+    color: #ccc;
+}
+
+@media (max-width: 900px) {
+    .contact-block {
+        text-align: left;
+    }
+}
+
+/* Make remaining courses layout clean */
+.remaining-courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.remaining-course-card {
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.remaining-course-card strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Details arrow fixes */
+.course-details summary {
+    font-size: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.core-course-detail summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.core-course-detail summary::-webkit-details-marker {
+    display: none;
+}
+
+.core-course-detail h5::after {
+    content: '+';
+    margin-left: auto;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+}
+
+.core-course-detail[open] h5::after {
+    content: '−';
+}
+
+.course-desc {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
