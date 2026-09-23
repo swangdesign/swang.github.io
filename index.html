@@ -6,7 +6,7 @@
     <title>Sebastian Wang | Project Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -344,7 +344,7 @@
                                 <details class="core-course-detail">
                                     <summary><h5>Bachelor's Thesis in Electrical Engineering <span>(15.0 hp)</span></h5></summary>
                                     <div class="course-desc">
-                                        <p>For my Bachelor's Thesis in Electrical Engineering, our team designed and developed a functional robotic exoskeleton. Applying systematic engineering and research methods, we formulated the technical requirements and integrated specialized knowledge in mechatronics, sensor technology, and control systems. The project involved planning and executing the development from initial concept to a physical prototype, while continuously evaluating the system's performance, human machine interaction, and safety. The development process was comprehensively documented and presented to an academic audience in a final technical report.</p>
+                                        <p>For my Bachelor's Thesis in Electrical Engineering, our team designed and developed a functional robotic exoskeleton. Applying systematic engineering and research methods, we formulated the technical requirements and integrated specialized knowledge in mechatronics, sensor technology, and control systems. The project involved planning and executing the development from initial concept to a physical prototype, while continuously evaluating the system's performance, human-machine interaction, and safety. The development process was comprehensively documented and presented to an academic audience in a final technical report.</p>
                                     </div>
                                 </details>
                                 <details class="core-course-detail">
@@ -426,20 +426,55 @@
             <div class="footer-left">
                 <h2>Let's connect.</h2>
                 <p>I’m always happy to connect and chat about engineering, product development, sustainable design, or new opportunities. Feel free to reach out!</p>
+                
+                <div class="contact-actions">
+                    <a href="mailto:wang.sebastian.02@gmail.com" class="btn btn-primary cta-btn">Send Direct Email</a>
+                    <a href="assets/docs/CV_Sebastian_Wang.pdf" target="_blank" class="btn btn-secondary cta-btn">Download CV</a>
+                </div>
             </div>
             <div class="footer-right">
-                <div class="contact-block">
-                    <p class="contact-subtitle">Email:</p>
-                    <a href="mailto:wang.sebastian.02@gmail.com" class="contact-link">wang.sebastian.02@gmail.com</a>
-                </div>
-                <div class="contact-block">
-                    <p class="contact-subtitle">Telephone:</p>
-                    <a href="tel:+46727333676" class="contact-link">+46 72 7333 676</a>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <span class="contact-subtitle">EMAIL ADDRESS</span>
+                        </div>
+                        <div class="contact-card-body">
+                            <a href="mailto:wang.sebastian.02@gmail.com" class="contact-link" id="email-text">wang.sebastian.02@gmail.com</a>
+                            <button class="copy-btn" onclick="copyEmail()" aria-label="Copy Email">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z" fill="currentColor" opacity="0.4"/>
+                                    <path d="M17.1 2H12.9C9.4 2 8 3.4 8 6.9V7.9H11.1C15.3 7.9 16.1 8.7 16.1 12.9V16H17.1C20.6 16 22 14.6 22 11.1V6.9C22 3.4 20.6 2 17.1 2Z" fill="currentColor"/>
+                                </svg>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <span class="contact-subtitle">TELEPHONE</span>
+                        </div>
+                        <div class="contact-card-body">
+                            <a href="tel:+46727333676" class="contact-link">+46 72 7333 676</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script>
+        function copyEmail() {
+            const emailText = document.getElementById('email-text').innerText;
+            navigator.clipboard.writeText(emailText).then(() => {
+                const btn = document.querySelector('.copy-btn span');
+                btn.innerText = 'Copied!';
+                setTimeout(() => {
+                    btn.innerText = 'Copy';
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
