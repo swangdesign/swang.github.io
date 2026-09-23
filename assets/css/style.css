@@ -764,3 +764,43 @@ footer {
         font-size: 1.4rem !important;
     }
 }
+
+/* Override previous wide-media to blend with background */
+.wide-media,
+.hor-media,
+.ver-media {
+    object-fit: contain !important;
+    background-color: var(--card-bg) !important;
+}
+
+/* Redesigned sleek minimal CTA links for Contact Section */
+.contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cta-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.cta-link .arrow {
+    margin-left: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-link:hover {
+    opacity: 0.6;
+}
+
+.cta-link:hover .arrow {
+    transform: translateX(6px);
+}
