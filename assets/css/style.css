@@ -713,3 +713,54 @@ footer {
         max-width: 100%;
     }
 }
+
+/* Wide image adjustments */
+.wide-media {
+    object-fit: contain !important;
+    background-color: #000 !important;
+}
+
+/* Footer layout improvements */
+.footer-container {
+    gap: 6rem !important;
+    align-items: flex-start !important;
+}
+
+/* Ensure default carousel media covers the container */
+.carousel-slide img:not(.wide-media),
+.carousel-slide video:not(.wide-media) {
+    object-fit: cover !important;
+    background: transparent !important;
+}
+
+/* Override previous contact styling to match new strict layout requirements */
+.contact-block {
+    text-align: left !important;
+}
+
+.contact-subtitle {
+    text-align: left !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #aaa !important;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-link {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+}
+
+@media (min-width: 901px) {
+    .contact-link {
+        font-size: 1.4rem !important;
+    }
+}
