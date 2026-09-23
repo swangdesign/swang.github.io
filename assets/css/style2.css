@@ -296,20 +296,22 @@ main {
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
+    transition: aspect-ratio 0.4s ease-in-out;
 }
 
 .carousel-track {
     position: relative;
     width: 100%;
-    /* Remove absolute heights/aspect ratios */
+    height: 100%;
     display: grid;
 }
 
 .carousel-slide {
-    /* Stack slides in a CSS Grid */
     grid-area: 1 / 1;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
 }
 
 .carousel-slide.active {
@@ -317,13 +319,18 @@ main {
     z-index: 1;
 }
 
-/* Fixed display format */
+/* Default image styling for standard, hor, ver */
 .carousel-slide img,
 .carousel-slide video {
     width: 100%;
     height: 100%;
-    /* Per user request: cover to completely fill frame without distortion */
     object-fit: cover; 
+}
+
+/* Explicit styling for wide-media to letterbox */
+.wide-media {
+    object-fit: contain !important;
+    background-color: var(--card-bg) !important;
 }
 
 .carousel-controls {
@@ -565,13 +572,10 @@ footer {
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.footer-left {
-    max-width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
 }
 
 .footer-left h2 {
@@ -585,41 +589,7 @@ footer {
     font-size: 1.25rem;
 }
 
-.contact-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.cta-btn {
-    border-color: #fff;
-    color: #fff;
-}
-
-.cta-btn.btn-primary {
-    background: #fff;
-    color: var(--text-primary);
-}
-
-.cta-btn.btn-primary:hover {
-    background: transparent;
-    color: #fff;
-}
-
-.cta-btn.btn-secondary:hover {
-    background: #fff;
-    color: var(--text-primary);
-}
-
 /* New Contact Cards Styling */
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 500px;
-}
-
 .contact-cards {
     display: flex;
     flex-direction: column;
@@ -630,7 +600,7 @@ footer {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    padding: 2rem;
+    padding: 2.5rem;
     transition: background 0.3s ease;
 }
 
@@ -648,20 +618,24 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #aaa;
+    display: block;
 }
 
 .contact-card-body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
+/* Uniform typography for all contact links */
 .contact-link {
-    font-size: 1.5rem;
+    font-size: clamp(0.7rem, 2vw, 1.1rem) !important;
     font-weight: 600;
     color: #fff;
     text-decoration: none;
-    word-break: break-all;
+    word-break: keep-all;
+    white-space: nowrap;
 }
 
 .copy-btn {
@@ -681,6 +655,40 @@ footer {
 
 .copy-btn:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+
+/* Action Cards styling (Pop Out) */
+.action-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.action-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.5rem !important;
+    background: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    background: #ffffff !important;
+}
+
+.action-card .contact-subtitle {
+    color: #666 !important;
+}
+
+.action-card .contact-link {
+    color: var(--text-primary) !important;
 }
 
 /* Responsive */
@@ -705,219 +713,7 @@ footer {
     }
 
     .footer-container {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 4rem;
     }
-    
-    .footer-right {
-        max-width: 100%;
-    }
-}
-
-/* Wide image adjustments */
-.wide-media {
-    object-fit: contain !important;
-    background-color: #000 !important;
-}
-
-/* Footer layout improvements */
-.footer-container {
-    gap: 6rem !important;
-    align-items: flex-start !important;
-}
-
-/* Ensure default carousel media covers the container */
-.carousel-slide img:not(.wide-media),
-.carousel-slide video:not(.wide-media) {
-    object-fit: cover !important;
-    background: transparent !important;
-}
-
-/* Override previous contact styling to match new strict layout requirements */
-.contact-block {
-    text-align: left !important;
-}
-
-.contact-subtitle {
-    text-align: left !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    color: #aaa !important;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.contact-card-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-
-.contact-link {
-    font-size: 1.2rem !important;
-    font-weight: 600 !important;
-}
-
-@media (min-width: 901px) {
-    .contact-link {
-        font-size: 1.4rem !important;
-    }
-}
-
-/* Override previous wide-media to blend with background */
-.wide-media,
-.hor-media,
-.ver-media {
-    object-fit: contain !important;
-    background-color: var(--card-bg) !important;
-}
-
-/* Redesigned sleek minimal CTA links for Contact Section */
-.contact-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.cta-link {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.cta-link .arrow {
-    margin-left: 0.75rem;
-    transition: transform 0.3s ease;
-}
-
-.cta-link:hover {
-    opacity: 0.6;
-}
-
-.cta-link:hover .arrow {
-    transform: translateX(6px);
-}
-
-/* Dynamic Carousel Sizing */
-.carousel-track {
-    transition: aspect-ratio 0.4s ease-in-out;
-    width: 100%;
-}
-
-.carousel-slide {
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-slide img,
-.carousel-slide video {
-    width: 100%;
-    height: 100%;
-}
-
-/* Action Cards styling */
-.action-cards {
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-}
-
-.action-card {
-    flex: 1;
-    min-width: 200px;
-    padding: 1.5rem !important;
-}
-
-.action-card .contact-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: opacity 0.3s ease;
-}
-
-.action-card:hover .contact-link {
-    opacity: 0.6;
-}
-
-/* Force Carousel Aspect Ratio */
-.carousel {
-    transition: aspect-ratio 0.4s ease-in-out;
-    width: 100%;
-}
-
-.carousel-track {
-    width: 100%;
-    height: 100%;
-}
-
-/* Action Cards pop styling */
-.action-card {
-    background: #ffffff !important;
-    border: 1px solid #ffffff !important;
-    color: var(--text-primary) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transform: translateY(0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.action-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    background: #ffffff !important;
-}
-
-.action-card .contact-subtitle {
-    color: #666 !important;
-}
-
-.action-card .contact-link {
-    color: var(--text-primary) !important;
-}
-
-/* Fix image cropping globally */
-.carousel-slide img,
-.carousel-slide video {
-    object-fit: contain !important;
-    background-color: var(--card-bg) !important;
-    width: 100%;
-    height: 100%;
-}
-
-/* Fix email wrap */
-#email-text {
-    word-break: keep-all;
-    white-space: nowrap;
-    font-size: clamp(0.7rem, 2vw, 1.1rem) !important;
-}
-
-/* Ensure action cards pop */
-.action-card {
-    background: #ffffff !important;
-    border: 1px solid #ffffff !important;
-    color: var(--text-primary) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transform: translateY(0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.action-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-.action-card .contact-subtitle {
-    color: #666 !important;
-}
-
-.action-card .contact-link {
-    color: var(--text-primary) !important;
 }

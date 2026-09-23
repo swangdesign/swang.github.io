@@ -46,34 +46,19 @@ window.addEventListener('scroll', revealOnScroll);
 // Trigger once on load
 revealOnScroll();
 
-// Carousel logic - Dynamic Aspect Ratios based on actual media size
+// Carousel logic - Fixed Aspect Ratios based on explicit naming tags
 function updateCarouselRatio(carousel, activeSlide) {
-    const media = activeSlide.querySelector('img') || activeSlide.querySelector('video');
-    if (!media) return;
-
-    const setRatio = () => {
-        let width = media.naturalWidth || media.videoWidth;
-        let height = media.naturalHeight || media.videoHeight;
-        
-        if (width && height) {
-            carousel.style.aspectRatio = `${width} / ${height}`;
-        } else {
-            carousel.style.aspectRatio = '4/3'; // fallback
-        }
-    };
-
-    if (media.tagName === 'IMG') {
-        if (media.complete) {
-            setRatio();
-        } else {
-            media.onload = setRatio;
-        }
+    const ratioType = activeSlide.getAttribute('data-ratio') || 'standard';
+    
+    // Explicitly follow rules for specific orientations
+    if (ratioType === 'hor') {
+        carousel.style.aspectRatio = '3/2';
+    } else if (ratioType === 'ver') {
+        carousel.style.aspectRatio = '3/4';
+    } else if (ratioType === 'wide') {
+        carousel.style.aspectRatio = '16/9';
     } else {
-        if (media.readyState >= 1) {
-            setRatio();
-        } else {
-            media.onloadedmetadata = setRatio;
-        }
+        carousel.style.aspectRatio = '4/3'; // Standard default
     }
 }
 
