@@ -46,22 +46,7 @@ window.addEventListener('scroll', revealOnScroll);
 // Trigger once on load
 revealOnScroll();
 
-// Carousel logic - Fixed Aspect Ratios based on explicit naming tags
-function updateCarouselRatio(carousel, activeSlide) {
-    const ratioType = activeSlide.getAttribute('data-ratio') || 'standard';
-    
-    // Explicitly follow rules for specific orientations
-    if (ratioType === 'hor') {
-        carousel.style.aspectRatio = '3/2';
-    } else if (ratioType === 'ver') {
-        carousel.style.aspectRatio = '3/4';
-    } else if (ratioType === 'wide') {
-        carousel.style.aspectRatio = '16/9';
-    } else {
-        carousel.style.aspectRatio = '4/3'; // Standard default
-    }
-}
-
+// Carousel logic
 window.goToSlide = function(carouselId, index) {
     const carousel = document.getElementById(carouselId);
     if (!carousel) return;
@@ -73,7 +58,6 @@ window.goToSlide = function(carouselId, index) {
     slides.forEach((slide, i) => {
         if (i === index) {
             slide.classList.add('active');
-            updateCarouselRatio(carousel, slide);
         } else {
             slide.classList.remove('active');
         }
@@ -111,13 +95,3 @@ window.prevSlide = function(carouselId) {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     goToSlide(carouselId, currentIndex);
 };
-
-// Initialize carousels on load
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.carousel').forEach(carousel => {
-        const firstSlide = carousel.querySelector('.carousel-slide.active');
-        if (firstSlide) {
-            updateCarouselRatio(carousel, firstSlide);
-        }
-    });
-});

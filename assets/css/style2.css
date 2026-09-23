@@ -717,3 +717,31 @@ footer {
         gap: 4rem;
     }
 }
+
+/* Overriding Carousel to unified default */
+.carousel {
+    aspect-ratio: 4/3 !important;
+}
+
+/* Ensure wide-media stays letterboxed but standard media covers */
+.carousel-slide img:not(.wide-media),
+.carousel-slide video:not(.wide-media) {
+    object-fit: cover !important;
+    background-color: transparent !important;
+}
+
+/* Overriding Action Cards to be larger and vertical */
+.action-cards {
+    display: flex;
+    flex-direction: column !important; /* Stack vertically */
+    gap: 1.5rem !important;
+    margin-top: 3rem;
+}
+
+.action-card {
+    padding: 2.5rem !important; /* Make them bigger, matching the standard contact card padding */
+}
+
+.action-card .contact-link {
+    font-size: 1.3rem !important; /* Larger text for the action buttons */
+}
