@@ -291,107 +291,43 @@ main {
     width: 100%;
 }
 
-.carousel {
-    position: relative;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: aspect-ratio 0.4s ease-in-out;
-    aspect-ratio: 4/3 !important; /* Unified default layout */
-}
 
-.carousel-track {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: grid;
-}
 
-.carousel-slide {
-    grid-area: 1 / 1;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    width: 100%;
-    height: 100%;
-}
 
-.carousel-slide.active {
-    opacity: 1;
-    z-index: 1;
-}
+
+
+
+
 
 /* Default image styling for standard media */
-.carousel-slide img,
-.carousel-slide video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover !important;
-    background-color: transparent !important;
-}
+
 
 /* Explicit styling for wide, hor, ver to letterbox within the 4:3 box */
-.carousel-slide img.wide-media,
-.carousel-slide video.wide-media,
-.carousel-slide img.hor-media,
-.carousel-slide video.hor-media,
-.carousel-slide img.ver-media,
-.carousel-slide video.ver-media {
-    object-fit: contain !important;
-    background-color: var(--card-bg) !important;
-}
 
-.carousel-controls {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    z-index: 10;
-}
 
-.carousel-prev,
-.carousel-next {
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #333;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.carousel-prev:hover,
-.carousel-next:hover {
-    background: #fff;
-}
 
-.carousel-indicators {
-    display: flex;
-    gap: 8px;
-}
 
-.carousel-indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
 
-.carousel-indicator.active {
-    background: #fff;
-    transform: scale(1.2);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Education Section */
 .education-section {
@@ -725,31 +661,125 @@ footer {
     }
 }
 
-/* ====== FIX FOR HORIZONTAL AND VERTICAL CROPPING ====== */
 
-/* 1. Define the container */
+
+
+
+
+
+
+
+
+
+
+/* ====== RESTORED PERFECT DYNAMIC CAROUSEL RULES ====== */
 .carousel {
-    aspect-ratio: 4/3 !important;
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: aspect-ratio 0.4s ease-in-out;
+    background-color: var(--card-bg);
+    aspect-ratio: 16/9;
 }
 
-/* 2. Target specific image tags globally and force contain */
-.carousel-slide img.wide-media,
-.carousel-slide video.wide-media,
-.carousel-slide img.hor-media,
-.carousel-slide video.hor-media,
-.carousel-slide img.ver-media,
-.carousel-slide video.ver-media {
-    object-fit: contain !important;
-    background-color: var(--card-bg) !important;
+.carousel-track { position: relative; width: 100%; height: 100%; }
+
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100% !important;
     height: 100% !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
 }
 
-/* 3. Target non-tagged standard images to cover */
-.carousel-slide img:not(.wide-media):not(.hor-media):not(.ver-media),
-.carousel-slide video:not(.wide-media):not(.hor-media):not(.ver-media) {
-    object-fit: cover !important;
-    background-color: transparent !important;
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-slide img,
+.carousel-slide video {
     width: 100% !important;
     height: 100% !important;
+    object-fit: cover !important; 
+    object-position: center top !important; 
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== ORIGINAL SHAPESHIFTING CONTROLS ====== */
+.carousel-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 10;
+}
+
+.carousel-prev,
+.carousel-next {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: #fff;
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.carousel-indicator.active {
+    background: #fff;
+    transform: scale(1.2);
 }
